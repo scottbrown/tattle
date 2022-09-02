@@ -5,8 +5,8 @@ import (
 )
 
 type PAMEvent struct {
-	Username string
-	RemoteHost string
+	Username    string
+	RemoteHost  string
 	SessionType string
 }
 

@@ -1,27 +1,27 @@
 package main
 
 import (
+	"fmt"
 	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/aws/ec2metadata"
 	"github.com/aws/aws-sdk-go-v2/service/cloudwatchevents"
-	"fmt"
 )
 
 const (
 	EVENT_DETAIL_TYPE = "SSH connection event detected"
-	EVENT_SOURCE = "com.unbounce.tattle"
-	MAX_RETRIES = 3
-	DETAIL_TEMPLATE = "{ \"username\": \"%s\", \"remote_host\": \"%s\", \"session\": \"%s\" }"  // yes, hardcoded JSON.  it's easier
+	EVENT_SOURCE      = "com.unbounce.tattle"
+	MAX_RETRIES       = 3
+	DETAIL_TEMPLATE   = "{ \"username\": \"%s\", \"remote_host\": \"%s\", \"session\": \"%s\" }" // yes, hardcoded JSON.  it's easier
 )
 
 type EventEmitter func(cfg aws.Config, params cloudwatchevents.PutEventsInput)
 
 type Emitter struct {
-	cfg		aws.Config
-	doc		ec2metadata.EC2InstanceIdentityDocument
-	pam		PAMEvent
-	session_type	string
-	emitEvent	EventEmitter
+	cfg          aws.Config
+	doc          ec2metadata.EC2InstanceIdentityDocument
+	pam          PAMEvent
+	session_type string
+	emitEvent    EventEmitter
 }
 
 func NewDefaultEmitter() Emitter {
@@ -40,7 +40,7 @@ func CloudWatchEventEmitter(cfg aws.Config, params cloudwatchevents.PutEventsInp
 	for retryCount <= MAX_RETRIES {
 		_, err := req.Send()
 		if err != nil {
-			retryCount++;
+			retryCount++
 		} else {
 			break
 		}
@@ -79,10 +79,10 @@ func buildEventParams(doc ec2metadata.EC2InstanceIdentityDocument, sessionType s
 	params := cloudwatchevents.PutEventsInput{
 		Entries: []cloudwatchevents.PutEventsRequestEntry{
 			cloudwatchevents.PutEventsRequestEntry{
-				Detail: &detail,
+				Detail:     &detail,
 				DetailType: &msg,
-				Resources: []string{ instance.Arn },
-				Source: &source,
+				Resources:  []string{instance.Arn},
+				Source:     &source,
 			},
 		},
 	}

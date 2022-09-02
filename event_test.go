@@ -1,11 +1,11 @@
 package main
 
 import (
-	"testing"
 	"fmt"
 	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/aws/ec2metadata"
 	"github.com/aws/aws-sdk-go-v2/service/cloudwatchevents"
+	"testing"
 )
 
 func MockEventEmitter(cfg aws.Config, params cloudwatchevents.PutEventsInput) {
@@ -18,9 +18,9 @@ func MockEventEmitter(cfg aws.Config, params cloudwatchevents.PutEventsInput) {
 
 func buildPAMEvent() PAMEvent {
 	p := PAMEvent{
-		Username: "johndoe",
+		Username:    "johndoe",
 		SessionType: "open_session",
-		RemoteHost: "home.example.com",
+		RemoteHost:  "home.example.com",
 	}
 	return p
 }
@@ -28,9 +28,9 @@ func buildPAMEvent() PAMEvent {
 func buildIdentityDocument() ec2metadata.EC2InstanceIdentityDocument {
 	doc := ec2metadata.EC2InstanceIdentityDocument{
 		AvailabilityZone: "ca-west-1a",
-		Region: "ca-west-1",
-		InstanceID: "i-123abc",
-		AccountID: "012345678901",
+		Region:           "ca-west-1",
+		InstanceID:       "i-123abc",
+		AccountID:        "012345678901",
 	}
 	return doc
 }
@@ -44,4 +44,3 @@ func TestEmitEvent(t *testing.T) {
 
 	emit(e)
 }
-

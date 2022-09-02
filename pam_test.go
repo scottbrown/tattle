@@ -11,22 +11,22 @@ func TestNewPAMEventVariousEnvValues(t *testing.T) {
 	valHost := "baz"
 	valEmpty := ""
 	cases := []struct {
-		name			string
-		sessionType		*string  // allow nil testing
-		username		*string  // allow nil testing
-		host			*string  // allow nil testing
-		expectedSessionType	string
-		expectedUsername	string
-		expectedHost		string
+		name                string
+		sessionType         *string // allow nil testing
+		username            *string // allow nil testing
+		host                *string // allow nil testing
+		expectedSessionType string
+		expectedUsername    string
+		expectedHost        string
 	}{
-		{ "subtest1", &valSessionType, &valUsername, &valHost, "foo", "bar", "baz" },
-		{ "subtest2", &valEmpty, &valUsername, &valHost, "", "bar", "baz" },
-		{ "subtest3", &valSessionType, &valEmpty, &valHost, "foo", "", "baz" },
-		{ "subtest4", &valSessionType, &valUsername, &valEmpty, "foo", "bar", "" },
-		{ "subtest5", nil, &valUsername, &valHost, "", "bar", "baz" },
-		{ "subtest6", &valSessionType, nil, &valHost, "foo", "", "baz" },
-		{ "subtest7", &valSessionType, &valUsername, nil, "foo", "bar", "" },
-		{ "subtest7", nil, nil, nil, "", "", "" },
+		{"subtest1", &valSessionType, &valUsername, &valHost, "foo", "bar", "baz"},
+		{"subtest2", &valEmpty, &valUsername, &valHost, "", "bar", "baz"},
+		{"subtest3", &valSessionType, &valEmpty, &valHost, "foo", "", "baz"},
+		{"subtest4", &valSessionType, &valUsername, &valEmpty, "foo", "bar", ""},
+		{"subtest5", nil, &valUsername, &valHost, "", "bar", "baz"},
+		{"subtest6", &valSessionType, nil, &valHost, "foo", "", "baz"},
+		{"subtest7", &valSessionType, &valUsername, nil, "foo", "bar", ""},
+		{"subtest7", nil, nil, nil, "", "", ""},
 	}
 
 	for _, tc := range cases {

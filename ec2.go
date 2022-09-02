@@ -11,13 +11,13 @@ const (
 )
 
 type EC2Instance struct {
-	Id	string
-	Arn	string
+	Id  string
+	Arn string
 }
 
 func NewEC2Instance(doc ec2metadata.EC2InstanceIdentityDocument) EC2Instance {
 	return EC2Instance{
-		Id: doc.InstanceID,
+		Id:  doc.InstanceID,
 		Arn: fmt.Sprintf(EC2_INSTANCE_ARN_TEMPLATE, doc.Region, doc.AccountID, doc.InstanceID),
 	}
 }
