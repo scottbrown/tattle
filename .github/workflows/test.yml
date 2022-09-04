@@ -12,3 +12,5 @@ jobs:
         uses: actions/setup-go@v2
       - name: run unit tests
         run: make test
+      - name: build a local artifact
+        run: make build
