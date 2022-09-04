@@ -7,9 +7,13 @@ BUILD_DIR := .build
 build:
 	go build -o $(BUILD_DIR)/tattle github.com/scottbrown/tattle
 
-# only works on Linux/EC2 machines
 .PHONY: test
 test:
+	go test ./...
+
+# only works on Linux/EC2 machines
+.PHONY: e2e-test
+e2e-test:
 	PAM_TYPE=open_session PAM_USER=johndoe PAM_RHOST=office ./tattle
 
 .PHONY: dist
