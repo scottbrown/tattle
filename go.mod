@@ -3,7 +3,7 @@ module github.com/scottbrown/tattle
 go 1.19
 
 require (
-	github.com/aws/aws-sdk-go-v2 v2.0.0-preview.2+incompatible
+	github.com/aws/aws-sdk-go-v2 v2.0.0-preview.4+incompatible
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6
 )
 

@@ -2,8 +2,8 @@ github.com/alecthomas/template v0.0.0-20160405071501-a0175ee3bccc h1:cAKDfWh5Vpd
 github.com/alecthomas/template v0.0.0-20160405071501-a0175ee3bccc/go.mod h1:LOuyumcjzFXgccqObfd/Ljyb9UuFJ6TxHnclSeseNhc=
 github.com/alecthomas/units v0.0.0-20151022065526-2efee857e7cf h1:qet1QNfXsQxTZqLG4oE62mJzwPIB8+Tee4RNCL9ulrY=
 github.com/alecthomas/units v0.0.0-20151022065526-2efee857e7cf/go.mod h1:ybxpYRFXyAe+OPACYpWeL0wqObRcbAqCMya13uyzqw0=
-github.com/aws/aws-sdk-go-v2 v2.0.0-preview.2+incompatible h1:n9Iyy5WdlNwUS9H6103enfcVyIMtHac5duUyEcJ/IAY=
-github.com/aws/aws-sdk-go-v2 v2.0.0-preview.2+incompatible/go.mod h1:5DmdJpM48aUShwAgzBfZDXP+O5nH9IYDqzpovC7q9Y4=
+github.com/aws/aws-sdk-go-v2 v2.0.0-preview.4+incompatible h1:9qh7ItVskIwDsCiQnqISqy8icJS4cc2yenagOUvXbd4=
+github.com/aws/aws-sdk-go-v2 v2.0.0-preview.4+incompatible/go.mod h1:5DmdJpM48aUShwAgzBfZDXP+O5nH9IYDqzpovC7q9Y4=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
