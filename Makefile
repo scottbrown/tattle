@@ -20,3 +20,7 @@ e2e-test:
 dist:
 	GOOS=linux GOARCH=amd64 go build -o $(DIST_DIR)/linux/amd64/tattle github.com/scottbrown/tattle
 	tar cfz $(DIST_DIR)/tattle.linux-amd64.tgz -C $(DIST_DIR)/linux/amd64 tattle
+
+.PHONY: upgrade-deps
+upgrade-deps:
+	go get -t -u ./...
